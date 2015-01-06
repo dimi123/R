@@ -9,8 +9,8 @@ data <- read.csv("H:\\.windows_settings\\Desktop\\stanford\\corpora\\Geodata\\im
 
 for(i in 1: nrow(data)){ #looping each row
 
-	name <- paste(data$userid[i], data$photoid[i], data$status[i], data$x[i], data$y[i], sep="_") #creates the name of the file using the userid, photid and status
-	file.create(name) # create a file with the above name
+    name <- paste(data$userid[i], data$photoid[i], data$status[i], data$x[i], data$y[i], sep="_") #creates the name of the file using the userid, photid and status
+    file.create(name) # create a file with the above name
     fileConn <- file(toString(name)) #open file connection
     writeLines(toString(data$annotation[i]), fileConn) #write in file
     close(fileConn) #close file
